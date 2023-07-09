@@ -8,7 +8,7 @@ A starting point for developing your own Chrome extension using [chatgpt.js](htt
 
 ## Installation
 
-1. Click **Fork** -or- **Use this template** > **Create a new repository** on https://github.com/kudoai/chatgpt.js-chrome-starter
+1. Click **Fork** -or- **Use this template** > **Create a new repository** on this repo
 
 2. **Clone** the new repo locally
 
