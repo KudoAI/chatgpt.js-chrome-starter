@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^9.0.10"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pre-commit": "npm run lint"
+  }
+}
