@@ -1,0 +1,42 @@
+name: Sync to KudoAI/chatgpt.js/starters/chrome/
+
+on:
+  push:
+    branches: main
+    paths: '**'
+
+jobs:
+  build:
+    if: (github.repository == 'KudoAI/chatgpt.js-chrome-starter') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout KudoAI/chatgpt.js-chrome-starter
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: KudoAI/chatgpt.js-chrome-starter
+          path: KudoAI/chatgpt.js-chrome-starter
+
+      - name: Checkout KudoAI/chatgpt.js
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: KudoAI/chatgpt.js
+          path: KudoAI/chatgpt.js
+
+      - name: Sync / to KudoAI/chatgpt.js/starters/chrome/
+        run: |
+          rsync -avhr --delete --exclude={'.*','package*json'} \
+            "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/" \
+            "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/"
+
+      - name: Push to KudoAI/chatgpt.js
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js-chrome-starter`]'
+          file_pattern: '**'
+          repository: KudoAI/chatgpt.js
