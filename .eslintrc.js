@@ -1,5 +1,5 @@
 module.exports = {
-    'extends': ['eslint:recommended'],
+    'extends': ['eslint:recommended', 'plugin:json-schema-validator/recommended'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
         'semi': ['error', 'always'], // enforce semicolons at end of statement
