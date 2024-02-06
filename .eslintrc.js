@@ -1,6 +1,5 @@
 module.exports = {
     'extends': ['eslint:recommended'],
-    'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
         'semi': ['error', 'always'], // enforce semicolons at end of statement
@@ -15,5 +14,5 @@ module.exports = {
         'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [{ 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }}],
-    'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
+    'env': { 'browser': true, 'node': true, 'es6': true }
 };
