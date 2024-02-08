@@ -1,5 +1,5 @@
 module.exports = {
-    'extends': ['eslint:recommended', 'plugin:json-schema-validator/recommended'],
+    'extends': ['eslint:recommended'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
         'semi': ['error', 'always'], // enforce semicolons at end of statement
@@ -13,6 +13,9 @@ module.exports = {
     'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'functionAliases': 'readonly',
         'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
-    'overrides': [{ 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }}],
+    'overrides': [
+        { 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }},
+        { 'files': ['**/*.json'], 'extends': ['plugin:json-schema-validator/recommended'] }
+    ],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
 };
