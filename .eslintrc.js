@@ -14,7 +14,7 @@ module.exports = {
         'syncExtension': 'writable', 'synonyms': 'readonly', 'Uint8Array': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [
-        { 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }},
+        { 'files': ['**/lib*/*.js'], 'parserOptions': { 'sourceType': 'module' }},
         { 'files': ['**/*.json'], 'extends': ['plugin:json-schema-validator/recommended'] }
     ],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
