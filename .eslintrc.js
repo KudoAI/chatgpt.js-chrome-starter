@@ -15,7 +15,8 @@ module.exports = {
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [
         { 'files': ['**/lib*/*.js'], 'parserOptions': { 'sourceType': 'module' }},
-        { 'files': ['**/*.json'], 'extends': ['plugin:json-schema-validator/recommended'] }
+        { 'files': ['**/*.json'], 'extends': ['plugin:json-schema-validator/recommended'] },
+        { 'files': ['**/*.yml'], 'extends': ['plugin:yml/standard'] }
     ],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
 };
