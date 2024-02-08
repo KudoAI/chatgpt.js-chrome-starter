@@ -3,7 +3,7 @@ name: Sync to KudoAI/chatgpt.js/starters/chrome/
 on:
   push:
     branches: main
-    paths: '**'
+    paths: "**"
 
 jobs:
   build:
@@ -34,9 +34,9 @@ jobs:
       - name: Push to KudoAI/chatgpt.js
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          push_options: '--force'
-          add_options: '--all'
+          push_options: --force
+          add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js-chrome-starter`]'
-          file_pattern: '**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `KudoAI/chatgpt.js-chrome-starter`]"
+          file_pattern: "**"
           repository: KudoAI/chatgpt.js
