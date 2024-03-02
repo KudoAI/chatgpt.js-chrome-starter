@@ -1,4 +1,4 @@
-// (c) 2023–2024 KudoAI & contributors under the MIT license
+// (c) 2023–2024 KudoAI & contributors under the MIT licensetest
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
@@ -898,16 +898,16 @@ const chatgpt = {
     getChatInput: function() { return chatgpt.getChatBox().value; },
 
     getContinueGeneratingButton: function() {
-        document.querySelectorAll('form button svg').forEach(svg => {
-            if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]')) {
-                return svg.parentNode.parentNode;
-    }});},
+        for (const formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('continue')) {
+                return formButton;
+    }}},
 
     getLastPrompt: function() { return chatgpt.getChatData('active', 'msg', 'user', 'latest'); },
     getLastResponse: function() { return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest'); },
 
     getNewChatLink: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 return navLink;
     }}},
@@ -934,10 +934,10 @@ const chatgpt = {
     getSendButton: function() { return document.querySelector('form button[class*="bottom"]'); },
 
     getStopGeneratingButton: function() {
-        document.querySelectorAll('form button svg').forEach(svg => {
-            if (svg.querySelector('path[d*="2 0 0 1 2"]'))
-                return svg.parentNode;
-    });},
+        for (const formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('stop')) {
+                return formButton;
+    }}},
 
     getUserLanguage: function() {
         return navigator.languages[0] || navigator.language || navigator.browserLanguage ||
@@ -948,7 +948,7 @@ const chatgpt = {
         deactivate: function() { this.isOn() ? this.toggle() : console.info('Chat history is already disabled!'); },
 
         isOn: function() {
-            const navDivs = document.querySelectorAll('nav div'),
+            const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
                   offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
             return offDiv.classList.toString().includes('invisible');
         },
@@ -958,14 +958,14 @@ const chatgpt = {
         isLoaded: function() {
             return new Promise(resolve => {
                 const checkChatHistory = () => {
-                    if (document.querySelector('nav')) resolve(true);
+                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve(true);
                     else setTimeout(checkChatHistory, 100);
                 };
                 checkChatHistory();
         });},
 
         toggle: function() {
-            for (const navBtn of document.querySelectorAll('nav button')) {
+            for (const navBtn of document.querySelectorAll('nav[aria-label="Chat history"] button')) {
                 if (/chat history/i.test(navBtn.textContent)) {
                     navBtn.click(); return;
         }}}
@@ -1554,10 +1554,10 @@ const chatgpt = {
         }}},
 
         stopGenerating: function() {
-            document.querySelectorAll('form button svg').forEach(svg => {
-                if (svg.querySelector('path[d*="2 0 0 1 2"]')) {
-                    svg.parentNode.click(); return;
-        }});}
+            for (const formButton of document.querySelectorAll('form button')) {
+                if (formButton.textContent.toLowerCase().includes('stop')) {
+                    formButton.click(); return;
+        }}}
     },
 
     reviewCode: function() { chatgpt.code.review(); },
@@ -1585,7 +1585,7 @@ const chatgpt = {
 
     sendInNewChat: function(msg) {
         if (typeof msg !== 'string') return console.error('Message must be a string!');
-        for (const navLink of document.querySelectorAll('nav a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); break;
         }} setTimeout(() => { chatgpt.send(msg); }, 500);
@@ -1716,7 +1716,7 @@ const chatgpt = {
         elements: [], observer: {},
 
         activateObserver: function() {
-            const chatHistoryNav = document.querySelector('nav'),
+            const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]'),
                 firstButton = chatHistoryNav.querySelector('a');
             if (chatgpt.history.isOff()) // Hide enable history spam div
                 try { firstButton.parentNode.nextElementSibling.style.display = 'none'; } catch (err) {}
@@ -1729,7 +1729,7 @@ const chatgpt = {
 
             let cssClasses;
             // Grab CSS from original website elements
-            for (let navLink of document.querySelectorAll('nav a')) {
+            for (let navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/.*chat/.exec(navLink.text)[0]) {
                     cssClasses = navLink.classList;
                     navLink.parentNode.style.margin = '2px 0'; // add v-margins to ensure consistency across all inserted buttons
@@ -1744,7 +1744,7 @@ const chatgpt = {
                 element.style.margin = '2px 0';
             });
     
-            const navBar = document.querySelector('nav');
+            const navBar = document.querySelector('nav[aria-label="Chat history"]');
             // Create MutationObserver instance
             this.observer = new MutationObserver(mutations => {
                 mutations.forEach(mutation => {
@@ -1847,7 +1847,7 @@ const chatgpt = {
     },
 
     startNewChat: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
+        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); return;
     }}},
