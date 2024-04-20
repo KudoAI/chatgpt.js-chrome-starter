@@ -2,8 +2,8 @@ name: Sync to KudoAI/chatgpt.js/starters/chrome/
 
 on:
   push:
-    branches: main
-    paths: "**"
+    branches: [main]
+    paths: ["**"]
 
 jobs:
   build:
