@@ -3,7 +3,7 @@ name: Sync to KudoAI/chatgpt.js/starters/chrome/
 on:
   push:
     branches: [main]
-    paths: ["**"]
+    paths: ["**", "!.*", "!package*json", "!eslint.config*"]
 
 jobs:
   build:
