@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TZ: PST8PDT
-      GIT_COMMITTER_NAME: kudo-sync-bot
-      GIT_COMMITTER_EMAIL: auto-sync@kudoai.com
 
     steps:
 
@@ -35,6 +33,14 @@ jobs:
           rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/"
+      
+      - name: Config committer
+        run: |
+          gpg --batch --import <(echo "${{ secrets.GPG_PRIVATE_KEY }}")
+          git config --global commit.gpgsign true
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Escape backticks in commit msg
         env:
