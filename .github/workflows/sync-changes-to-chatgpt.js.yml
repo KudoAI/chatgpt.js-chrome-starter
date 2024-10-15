@@ -1,4 +1,4 @@
-name: Sync to KudoAI/chatgpt.js/starters/chrome/
+name: Sync ** to KudoAI/chatgpt.js/starters/chrome/
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           repository: KudoAI/chatgpt.js
           path: KudoAI/chatgpt.js
 
-      - name: Sync / to KudoAI/chatgpt.js/starters/chrome/
+      - name: Sync ** to KudoAI/chatgpt.js/starters/chrome/
         run: |
           rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/" \
@@ -40,7 +40,7 @@ jobs:
           git config --global commit.gpgsign true
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
-          git config --global user.signingkey  "${{ secrets.GPG_PRIVATE_ID }}"
+          git config --global user.signingkey "${{ secrets.GPG_PRIVATE_ID }}"
 
       - name: Escape backticks in commit msg
         env:
