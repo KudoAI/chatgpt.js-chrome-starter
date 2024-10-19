@@ -5,6 +5,7 @@
     "url": "https://www.kudoai.com"
   },
   "homepage": "https://github.com/KudoAI/chatgpt.js-chrome-starter",
+  "license": "MIT",
   "funding": "http://github.com/sponsors/KudoAI",
   "devDependencies": {
     "eslint": "^9.12.0",
