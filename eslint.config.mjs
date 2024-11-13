@@ -3,9 +3,9 @@ import globals from 'globals'
 import json from 'eslint-plugin-json'
 
 export default [
-    js.configs.recommended,
     { ignores: ['**/*.min.js'] },
     {
+        files: ['**/*.js', '**/*.mjs'], ...js.configs.recommended,
         rules: {
             'indent': 'off', 'no-unexpected-multiline': 'off', 'key-spacing': 'off', // allow whitespace anywhere
             'quotes': ['error', 'single', { 'allowTemplateLiterals': true }], // enforce single quotes except backticks to avoid escaping quotes
