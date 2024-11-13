@@ -3,7 +3,6 @@ import globals from 'globals'
 import json from 'eslint-plugin-json'
 
 export default [
-    { ignores: ['**/*.min.js'] },
     {
         files: ['**/*.js', '**/*.mjs'], ...js.configs.recommended,
         rules: {
