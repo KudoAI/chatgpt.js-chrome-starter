@@ -22,8 +22,8 @@ export default [
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.node,
-                chatgpt: 'readonly', chrome: 'readonly',
-                GM_info: 'readonly', syncExtension: 'writable' }
+                chatgpt: 'readonly', chrome: 'readonly', GM_info: 'readonly'
+            }
         }
     },
     { files: ['**/*.mjs', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
