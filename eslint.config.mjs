@@ -10,10 +10,7 @@ export default [
         files: ['**/*.js', '**/*.mjs'],
         languageOptions: {
             ecmaVersion: 'latest', sourceType: 'script',
-            globals: {
-                ...globals.browser, ...globals.node,
-                chatgpt: 'readonly', chrome: 'readonly', GM_info: 'readonly'
-            }
+            globals: { ...globals.browser, ...globals.node, chrome: 'readonly', GM_info: 'readonly' }
         },
         plugins: { regexp },
         rules: {
