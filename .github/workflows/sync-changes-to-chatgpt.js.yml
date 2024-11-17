@@ -54,5 +54,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/KudoAI/chatgpt.js
           git add .
-          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from KudoAI/chatgpt.js-chrome-starter]" || true
+          git commit -n -m "$ESCAPED_MSG ↞ [auto-sync from https://github.com/KudoAI/chatgpt.js-chrome-starter]" || true
           git push
