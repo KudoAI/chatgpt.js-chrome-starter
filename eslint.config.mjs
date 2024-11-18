@@ -29,7 +29,7 @@ export default [
             'no-unused-vars': ['error', { 'caughtErrors': 'none' }] // allow unused named args in catch blocks
         }
     },
-    { files: ['**/*.mjs', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
+    { files: ['**/*.mjs', '**/components/*.js', '**/lib*/*.js'], languageOptions: { sourceType: 'module' }},
     { files: ['**/*.json'], ignores: ['**/package-lock.json'], language: 'json/json', ...json.configs.recommended },
     {
         files: ['**/*.md'], language: 'markdown/commonmark', plugins: { markdown },
