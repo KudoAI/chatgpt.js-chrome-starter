@@ -3,7 +3,7 @@ name: Sync ** to KudoAI/chatgpt.js/starters/chrome/
 on:
   push:
     branches: [main]
-    paths: ["**", "!.*", "!package*json", "!eslint.config*"]
+    paths: ["**", "!.*", "!package*.json", "!eslint.config*"]
 
 jobs:
   build:
@@ -30,7 +30,7 @@ jobs:
 
       - name: Sync ** to KudoAI/chatgpt.js/starters/chrome/
         run: |
-          rsync -avhr --delete --exclude={'.*','eslint*','package*json'} \
+          rsync -avhr --delete --exclude={'.*','eslint*','package*.json'} \
             "${{ github.workspace }}/KudoAI/chatgpt.js-chrome-starter/" \
             "${{ github.workspace }}/KudoAI/chatgpt.js/starters/chrome/"
       
