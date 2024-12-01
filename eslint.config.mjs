@@ -12,8 +12,8 @@ export default [
         languageOptions: {
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
-                ...globals.browser, ...globals.node,
-                chatgpt: 'readonly', chrome: 'readonly', dom: 'readonly', GM_info: 'readonly'
+                ...globals.browser, ...globals.node, chatgpt: 'readonly', chrome: 'readonly', config: 'writable',
+                dom: 'readonly', GM_info: 'readonly', settings: 'writable'
             }
         },
         plugins: { regexp, 'js-styles': stylisticJS },
