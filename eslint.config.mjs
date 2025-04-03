@@ -51,7 +51,7 @@ export default [
             '@html-eslint/require-title': 'off', // allow missing title tags
             '@html-eslint/quotes': 'off', // allow unquoted attrs for compactness
             '@html-eslint/attrs-newline': 'off', // allow multi-attrs in single line
-            '@html-eslint/element-newline': ['error', { 'skip': ['html'] }] // allow multi-tags in single line
+            '@html-eslint/indent': 'off', '@html-eslint/element-newline': 'off' // allow whitespace anywhere
         }
     },
     { files: ['**/*.json'], language: 'json/json', ...json.configs.recommended },
