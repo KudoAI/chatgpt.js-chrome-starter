@@ -10,15 +10,15 @@ import regexp from 'eslint-plugin-regexp'
 import stylisticJS from '@stylistic/eslint-plugin'
 
 export default [
-    { ignores: ['**/package-lock.json'] },
+    { ignores: ['**/*.min.{js,mjs}', '**/package-lock.json'] },
     {
         files: ['**/*.{js,mjs}'],
         languageOptions: {
             ecmaVersion: 'latest', sourceType: 'script',
             globals: {
                 ...globals.browser, ...globals.node, app: 'writable', chatgpt: 'readonly', chrome: 'readonly',
-                config: 'writable', dom: 'readonly', env: 'writable', feedback: 'readonly', icons: 'writable',
-                modals: 'writable', settings: 'writable', ui: 'readonly'
+                config: 'writable', css: 'readonly', dom: 'readonly', env: 'writable', feedback: 'readonly',
+                icons: 'writable', modals: 'writable', settings: 'writable', ui: 'readonly'
             }
         },
         plugins: { 'import': importPlugin, 'js-styles': stylisticJS, regexp },
