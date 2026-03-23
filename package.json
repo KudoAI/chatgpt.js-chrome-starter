@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@eslint/css": "^1.0.0",
-    "@eslint/json": "^1.1.0",
+    "@eslint/json": "^1.2.0",
     "@eslint/markdown": "^7.5.1",
     "@html-eslint/eslint-plugin": "^0.58.1",
     "@html-eslint/parser": "^0.58.0",
