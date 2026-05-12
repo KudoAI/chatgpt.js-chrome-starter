@@ -61,7 +61,8 @@
         dom.create.elem('link', { rel: 'stylesheet',
             href: `https://cdn.jsdelivr.net/gh/adamlui/ai-web-extensions@71695ca/assets/styles/rising-particles/dist/${
                 color}.min.css`
-    })))
+        })
+    ))
 
     if (app.config.extensionDisabled) return
 
