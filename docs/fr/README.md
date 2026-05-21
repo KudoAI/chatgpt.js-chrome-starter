@@ -3,8 +3,8 @@
 <div align="center">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://assets.chatgptjs.org/images/icons/earth/white/icon32.svg?v=e638eac">
-           <img height=14 src="https://assets.chatgptjs.org/images/icons/earth/black/icon32.svg?v=e638eac">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/earth/white/icon32.svg">
+           <img height=14 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;Français |
         <a href="../..#readme">English</a> |
@@ -22,9 +22,9 @@
     </h6>
 </div>
 
-# <img height=21 src="https://assets.chatgptjs.org/images/icons/platforms/chrome/icon32.png?v=e638eac"> chatgpt.js-chrome-starter
+# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets//images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
 
-<h3>Un point de départ pour développer votre propre extension Chrome en utilisant <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a></h3>
+<h3>Un point de départ pour développer votre propre extension Chrome en utilisant <a href="https://github.com/KudoAI/chatgpt.js/#readme">chatgpt.js</a></h3>
 
 <br>
 
@@ -80,14 +80,14 @@ Voici quelques-unes des extensions proposées par Google qui utilisent chatgpt.j
 <br>
 
 
-<a href="https://chatgptinfinity.com" target="_blank" rel="noopener">
-    <img width=777 src="https://assets.chatgptinfinity.com/images/tiles/marquee/tile-1400x560.png?v=34b428b">
+<a href="https://github.com/adamlui/chatgpt-infinity/#readme" target="_blank" rel="noopener">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-infinity@34b428b/assets/images/tiles/marquee/tile-1400x560.png">
 </a>
 
 <p><br>
 
-<a href="https://chatgptwidescreen.com" target="_blank" rel="noopener">
-    <img width=777 src="https://assets.chatgptwidescreen.com/images/tiles/marquee/tile-1400x560.png?v=4c5d018">
+<a href="https://github.com/adamlui/chatgpt-widescreen/#readme" target="_blank" rel="noopener">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets//images/tiles/marquee/tile-1400x560.png">
 </a>
 
 </div>
