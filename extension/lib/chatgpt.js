@@ -1301,9 +1301,9 @@ const chatgpt = {
         if (thisQuadrantQueue.length > 1) {
             try { // to move old notifications
                 for (const divId of thisQuadrantQueue.slice(0, -1)) { // exclude new div
-                    const oldDiv = document.getElementById(divId),
-                          offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
-                          vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
+                    const oldDiv = document.getElementById(divID) ; if (!oldDiv) break
+                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom' // pick property to change
+                    const vOffset = +parseInt(oldDiv.style[offsetProp]) +5 + oldDiv.getBoundingClientRect().height
                     oldDiv.style[offsetProp] = `${vOffset}px` // change prop
                 }
             } catch (err) { console.warn('Failed to re-position notification:', err) }
@@ -1494,7 +1494,7 @@ const chatgpt = {
         getFromDOM(pos) {
             const responseDivs = document.querySelectorAll('div[data-message-author-role=assistant]'),
                   strPos = pos.toString().toLowerCase()
-            let response = ''
+            let response
             if (!responseDivs.length) return console.error('No conversation found!')
             if (/last|final/.test(strPos)) // get last response
                 response = responseDivs[responseDivs.length - 1].textContent
