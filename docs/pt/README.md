@@ -22,13 +22,13 @@
     </h6>
 </div>
 
-# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets//images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
+# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
 
 <h3>Um ponto de partida para desenvolver sua própria extensão do Chrome usando <a href="https://github.com/KudoAI/chatgpt.js/#readme">chatgpt.js</a></h3>
 
 <br>
 
-<img src="../../images/screenshots/extension-loaded.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/extension-loaded.png">
 
 ## ⚡ Instalação
 
@@ -39,20 +39,20 @@
 3. Visite `chrome://extensions` no Chrome (ou qualquer navegador Chromium)
 
 4. Certifique-se de que a alternância **Developer mode** esteja ativada<br>
-![](../../images/screenshots/developer-mode-toggle.png)
+![](https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/developer-mode-toggle.png)
 
 5. Clique **Load unpacked**<br><br>
-<img src="../../images/screenshots/load-unpacked-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/load-unpacked-button.png">
 <br>
 
 6. Na janela pop-up, selecione a pasta **extension** > clique **Select Folder**<br><br><br>
-<img src="../../images/screenshots/select-extension-folder.png"><br><br>
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/select-extension-folder.png"><br><br>
 
 É isso! **ChatGPT Extension** agora aparecerá na lista de extensões:
 
 <br>
 
-<img src="../../images/screenshots/chatgpt-extension-in-list.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../images/screenshots/reload-extension-button.png">
-<img src="../../images/screenshots/reload-page-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-extension-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-page-button.png">
 
 <p><br>
 
@@ -87,7 +87,7 @@ Estas são algumas das extensões apresentadas pelo Google que usam chatgpt.js:
 <p><br>
 
 <a href="https://github.com/adamlui/chatgpt-widescreen/#readme" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets//images/tiles/marquee/tile-1400x560.png">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets/images/tiles/marquee/tile-1400x560.png">
 </a>
 
 </div>

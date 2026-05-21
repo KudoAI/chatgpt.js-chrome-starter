@@ -22,13 +22,13 @@
     </h6>
 </div>
 
-# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets//images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
+# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
 
 <h3><a href="https://github.com/KudoAI/chatgpt.js/#readme">chatgpt.js</a> を使用して独自の Chrome 拡張機能を開発するための出発点</h3>
 
 <br>
 
-<img src="../../images/screenshots/extension-loaded.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/extension-loaded.png">
 
 ## ⚡ インストール
 
@@ -39,20 +39,20 @@
 3. Chrome (または任意の Chromium ブラウザ) で `chrome://extensions` にアクセスします
 
 4. **Developer mode** の切り替えが有効になっていることを確認してください<br>
-![](../../images/screenshots/developer-mode-toggle.png)
+![](https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/developer-mode-toggle.png)
 
 5. クリック **Load unpacked**<br><br>
-<img src="../../images/screenshots/load-unpacked-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/load-unpacked-button.png">
 <br>
 
 6. ポップアップ ウィンドウで、**extension** フォルダーを選択します > クリック **Select Folder**<br><br><br>
-<img src="../../images/screenshots/select-extension-folder.png"><br><br>
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/select-extension-folder.png"><br><br>
 
 それでおしまい！ **ChatGPT Extension** が拡張機能リストに表示されます:
 
 <br>
 
-<img src="../../images/screenshots/chatgpt-extension-in-list.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../images/screenshots/reload-extension-button.png">
-<img src="../../images/screenshots/reload-page-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-extension-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-page-button.png">
 
 <p><br>
 
@@ -87,7 +87,7 @@ _Chrome API の高度なメソッドについては、https://developer.chrome.c
 <p><br>
 
 <a href="https://github.com/adamlui/chatgpt-widescreen/#readme" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets//images/tiles/marquee/tile-1400x560.png">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets/images/tiles/marquee/tile-1400x560.png">
 </a>
 
 </div>

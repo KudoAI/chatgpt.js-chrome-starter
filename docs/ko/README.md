@@ -22,13 +22,13 @@
     </h6>
 </div>
 
-# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets//images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
+# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
 
 <h3><a href="https://github.com/KudoAI/chatgpt.js/#readme">chatgpt.js</a> 를 사용하여 나만의 Chrome 확장 프로그램을 개발하기 위한 출발점</h3>
 
 <br>
 
-<img src="../../images/screenshots/extension-loaded.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/extension-loaded.png">
 
 ## ⚡ 설치
 
@@ -39,20 +39,20 @@
 3. Chrome (또는 모든 Chromium 브라우저) 에서 `chrome://extensions` 를 방문합니다
 
 4. **Developer mode** 토글이 활성화되어 있는지 확인합니다<br>
-![](../../images/screenshots/developer-mode-toggle.png)
+![](https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/developer-mode-toggle.png)
 
 5. 딸깍 하는 소리 **Load unpacked**<br><br>
-<img src="../../images/screenshots/load-unpacked-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/load-unpacked-button.png">
 <br>
 
 6. 팝업 창에서 **extension** 폴더를 선택합니다 > 딸깍 하는 소리 **Select Folder**<br><br><br>
-<img src="../../images/screenshots/select-extension-folder.png"><br><br>
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/select-extension-folder.png"><br><br>
 
 그게 다야! **ChatGPT Extension** 이 이제 확장 목록에 나타납니다:
 
 <br>
 
-<img src="../../images/screenshots/chatgpt-extension-in-list.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../images/screenshots/reload-extension-button.png">
-<img src="../../images/screenshots/reload-page-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-extension-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-page-button.png">
 
 <p><br>
 
@@ -87,7 +87,7 @@ _고급 Chrome API 메서드에 대한 자세한 내용은 https://developer.chr
 <p><br>
 
 <a href="https://github.com/adamlui/chatgpt-widescreen/#readme" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets//images/tiles/marquee/tile-1400x560.png">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets/images/tiles/marquee/tile-1400x560.png">
 </a>
 
 </div>

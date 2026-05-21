@@ -22,13 +22,13 @@
     </h6>
 </div>
 
-# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets//images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
+# <img height=21 src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js@e638eac/assets/images/icons/platforms/chrome/icon32.png"> chatgpt.js-chrome-starter
 
 <h3>使用 <a href="https://github.com/KudoAI/chatgpt.js/#readme">chatgpt.js</a> 开发自己的 Chrome 扩展程序的起点</h3>
 
 <br>
 
-<img src="../../images/screenshots/extension-loaded.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/extension-loaded.png">
 
 ## ⚡ 安装
 
@@ -39,20 +39,20 @@
 3. 在 Chrome（或任何 Chromium 浏览器）中访问 `chrome://extensions`
 
 4. 确保 **Developer Mode** 开关已激活<br>
-![](../../images/screenshots/developer-mode-toggle.png)
+![](https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/developer-mode-toggle.png)
 
 5. 点击 **Load unpacked**<br><br>
-<img src="../../images/screenshots/load-unpacked-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/load-unpacked-button.png">
 <br>
 
 6. 在弹出窗口中，选择 **extension** 文件夹 > 点击 **Select Folder**<br><br><br>
-<img src="../../images/screenshots/select-extension-folder.png"><br><br>
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/select-extension-folder.png"><br><br>
 
 就是这样! **ChatGPT Extension** 现在将出现在扩展列表中:
 
 <br>
 
-<img src="../../images/screenshots/chatgpt-extension-in-list.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/chatgpt-extension-in-list.png">
 
 <p><br>
 
@@ -62,8 +62,8 @@
 
 <br>
 
-<img src="../../images/screenshots/reload-extension-button.png">
-<img src="../../images/screenshots/reload-page-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-extension-button.png">
+<img src="https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js-chrome-starter@6a258f4/images/screenshots/reload-page-button.png">
 
 <p><br>
 
@@ -87,7 +87,7 @@ _有关高级 Chrome API 方法，请参阅：https://developer.chrome.com/docs/
 <p><br>
 
 <a href="https://github.com/adamlui/chatgpt-widescreen/#readme" target="_blank" rel="noopener">
-    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets//images/tiles/marquee/tile-1400x560.png">
+    <img width=777 src="https://cdn.jsdelivr.net/gh/adamlui/chatgpt-widescreen@4c5d018/assets/images/tiles/marquee/tile-1400x560.png">
 </a>
 
 </div>
