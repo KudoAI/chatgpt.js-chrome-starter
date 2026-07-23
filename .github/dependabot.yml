@@ -5,12 +5,15 @@ updates:
     directory: /
     schedule:
       interval: daily
-    versioning-strategy: increase
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: daily
+    cooldown:
+      semver-minor-days: 7
     groups:
       dev-dependencies:
         dependency-type: development
