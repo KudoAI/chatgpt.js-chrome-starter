@@ -1,4 +1,4 @@
-// © 2023–2026 KudoAI & contributors under the MIT license.
+// © 2023–2026 KudoAI & contributors under the MIT license
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://github.com/KudoAI/chatgpt.js/blob/main/docs/USERGUIDE.md
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@latest/dist/chatgpt.min.js
@@ -350,13 +350,13 @@ const chatgpt = {
         modalContainer.append(modal) ; document.body.append(modalContainer)
 
         // Enqueue alert
-        let alertQueue = JSON.parse(localStorage.alertQueue ??= JSON.stringify([]))
+        let alertQueue = JSON.parse(sessionStorage.alertQueue ??= JSON.stringify([]))
         alertQueue.push(modalContainer.id)
-        localStorage.alertQueue = JSON.stringify(alertQueue)
+        sessionStorage.alertQueue = JSON.stringify(alertQueue)
 
         // Show alert if none active
         modalContainer.style.display = 'none'
-        if (alertQueue.length == 1) {
+        if (alertQueue.length === 1) {
             modalContainer.style.display = ''
             setTimeout(() => { // dim bg
                 modal.parentNode.style.backgroundColor = `rgba(67,70,72,${ scheme == 'dark' ? 0.62 : 0.33 })`
@@ -377,9 +377,9 @@ const chatgpt = {
 
                 // Remove alert
                 modalContainer?.remove() // ...from DOM
-                alertQueue = JSON.parse(localStorage.alertQueue)
+                alertQueue = JSON.parse(sessionStorage.alertQueue)
                 alertQueue.shift() // + memory
-                localStorage.alertQueue = JSON.stringify(alertQueue) // + storage
+                sessionStorage.alertQueue = JSON.stringify(alertQueue) // + storage
                 document.removeEventListener('keydown', handlers.dismiss.key) // prevent memory leaks
 
                 // Check for pending alerts in queue
@@ -648,8 +648,7 @@ const chatgpt = {
         },
 
         async write(prompt, outputLang, { verbose = false } = {}) {
-            if (!chatgpt._validateArg({ arg: prompt, type: 'string' })) return
-            if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
+            if (!chatgpt._validateArg([{ arg: prompt, type: 'string' }, { arg: outputLang, type: 'lang' }])) return
             if (verbose) console.info('Writing code...')
             const fullPrompt = `Write this as code in ${outputLang}: ${prompt}`,
                   resp = await chatgpt[chatgpt.env == 'frontend' ? 'askAndGetReply' : 'send'](fullPrompt)
@@ -661,8 +660,8 @@ const chatgpt = {
 
     async detectLanguage(text, { verbose = false } = {}) {
         if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        chatgpt.send(`Detect the language of the following text:\n\n${text}`
-            + '\n\nOnly respond with the name of the language')
+        chatgpt.send(`Detect the language of the following text:\n\n${
+             text}\n\nOnly respond with the name of the language`)
         if (verbose) console.info('Reviewing text...')
         await chatgpt.isIdle()
         return chatgpt.getChatData('active', 'msg', 'chatgpt', 'latest')
@@ -869,7 +868,7 @@ const chatgpt = {
               validSenders = [ 'all', 'both', 'user', 'chatgpt' ]
         chatToGet = !chatToGet ? 'active' // if '' passed, set to active
                   : Number.isInteger(chatToGet) || /^\d+$/.test(chatToGet) ? // else if string/int num passed
-                      ( parseInt(chatToGet, 10) == 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
+                      ( parseInt(chatToGet, 10) === 0 ? 0 : parseInt(chatToGet, 10) -1 ) // ...offset -1 or keep as 0
                   : chatToGet // else preserve non-num string as 'active', 'latest' or title/id of chat to get
         detailsToGet = ['all', ''].includes(detailsToGet) ? // if '' or 'all' passed
                          validDetails.filter(detail => /^(?!all$|msg$).*/.test(detail)) // populate w/ [validDetails] except 'all' & 'msg'
@@ -877,7 +876,7 @@ const chatgpt = {
         sender = !sender ? 'all' // if '' or unpassed, set to 'all'
                : validSenders.includes(sender) ? sender : 'invalid' // else set to validSenders or 'invalid'
         msgToGet = Number.isInteger(msgToGet) || /^\d+$/.test(msgToGet) ? // if string/int num passed
-                     ( parseInt(msgToGet, 10) == 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
+                     ( parseInt(msgToGet, 10) === 0 ? 0 : parseInt(msgToGet, 10) -1 ) // ...offset -1 or keep as 0
                  : ['all', 'latest'].includes(msgToGet.toLowerCase()) ? // else if 'all' or 'latest' passed
                      msgToGet.toLowerCase() // ...preserve it
                  : !msgToGet ? 'all' // else if '', set to 'all'
@@ -1464,10 +1463,10 @@ const chatgpt = {
         }
 
         // Enqueue notification
-        let notifyProps = JSON.parse(localStorage.notifyProps
+        let notifyProps = JSON.parse(sessionStorage.notifyProps
             ??= JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }}))
         notifyProps.queue[notificationDiv.quadrant].push(notificationDiv.id)
-        localStorage.notifyProps = JSON.stringify(notifyProps)
+        sessionStorage.notifyProps = JSON.stringify(notifyProps)
 
         // Position notification (defaults to top-right)
         notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : ''
@@ -1510,9 +1509,9 @@ const chatgpt = {
         // Destroy notification
         notificationDiv.onanimationend = () => {
             notificationDiv.remove() // remove from DOM
-            notifyProps = JSON.parse(localStorage.notifyProps)
+            notifyProps = JSON.parse(sessionStorage.notifyProps)
             notifyProps.queue[notificationDiv.quadrant].shift() // + memory
-            localStorage.notifyProps = JSON.stringify(notifyProps) // + storage
+            sessionStorage.notifyProps = JSON.stringify(notifyProps) // + storage
         }
 
         return notificationDiv
@@ -1929,8 +1928,7 @@ const chatgpt = {
 
     async sentiment(text, entity, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        if (!chatgpt._validateArg({ arg: entity, type: 'string' })) return
+        if (!chatgpt._validateArg([{ arg: text, type: 'string' }, { arg: entity, type: 'string' }])) return
         chatgpt.send('What is the sentiment of the following text'
             + ( entity ? ` towards the entity ${entity},` : '' )
             + ' from strongly negative to strongly positive?\n\n' + text )
@@ -2140,10 +2138,10 @@ const chatgpt = {
 
     async translate(text, outputLang, { verbose = false } = {}) {
         if (!chatgpt._validateEnv({ allowed: 'frontend' })) return
-        if (!chatgpt._validateArg({ arg: text, type: 'string' })) return
-        if (!chatgpt._validateArg({ arg: outputLang, type: 'lang' })) return
-        for (let i = 0 ; i < arguments.length ; i++) if (typeof arguments[i] != 'string')
-            return console.error(`Argument ${ i +1 } must be a string!`)
+        if (!chatgpt._validateArg([{ arg: text, type: 'string' }, { arg: outputLang, type: 'lang' }])) return
+        for (let i = 0 ; i < arguments.length ; i++)
+            if (typeof arguments[i] != 'string')
+                return console.error(`Argument ${ i +1 } must be a string!`)
         chatgpt.send(`Translate the following text to ${outputLang}. Only reply with the translation.\n\n${text}`)
         if (verbose) console.info('Translating text...')
         await chatgpt.isIdle()
@@ -2156,9 +2154,9 @@ const chatgpt = {
         try { // to use native secure uuid generator
             return crypto.randomUUID()
         } catch(err) {
-            let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
+            let d = new Date().getTime() // in ms (to ensure UUID uniqueness)
             const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-                const r = (( d +( crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF )*16 )%16 ) | 0
+                const r = (( d +( crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF ) *16 ) %16 ) | 0
                 d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
                 return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
             })
@@ -2168,11 +2166,16 @@ const chatgpt = {
 
     writeCode() { chatgpt.code.write() },
 
-    _validateArg({ arg, type = 'string' }) {
-        return !arg ? !!console.error('Arg not supplied!')
-               : ['lang', 'string'].includes(type) && typeof arg != 'string' ?
-                     !!console.error(`'${type}' arg must be a string!`)
-               : true
+    _validateArg(spec) {
+        if (Array.isArray(spec))
+            return spec.every(item => this._validateArg(item))
+        const { arg, type = 'string' } = spec || {}
+        if (!arg)
+            return !!console.error('Arg not supplied!')
+        else if (['lang', 'string'].includes(type) && typeof arg != 'string')
+            return !!console.error(`'${type}' arg must be a string!`)
+        else
+            return true
     },
 
     _validateEnv({ allowed = [] } = {}) {
