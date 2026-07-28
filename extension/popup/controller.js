@@ -73,13 +73,13 @@
                 let validVal = parseInt(userVal.replace(/\D/g, '')) ; if (isNaN(validVal)) return
                 validVal = Math.max(minVal, Math.min(maxVal, validVal))
                 entry.slider.value = validVal ; settings.save(entryData.key, validVal)
-                sync.configToUI({ updatedKey: entryData.key })
+                sync.configToUI({ key: entryData.key })
                 entry.label.textContent = `${entryData.label}: ${validVal}${ entryData.labelSuffix || '' }`
                 entry.label.append(entry.editLink)
                 entry.slider.style.setProperty('--track-fill-percent', `${ validVal / entry.slider.max *100 }%`)
             }
             entry.slider.oninput = ({ target: { value }}) => { // update label/color
-                settings.save(entryData.key, parseInt(value)) ; sync.configToUI({ updatedKey: entryData.key })
+                settings.save(entryData.key, parseInt(value)) ; sync.configToUI({ key: entryData.key })
                 entry.label.textContent = `${entryData.label}: ${value}${ entryData.labelSuffix || '' }`
                 entry.label.append(entry.editLink)
                 entry.slider.style.setProperty('--track-fill-percent', `${ value / entry.slider.max *100 }%`)
@@ -110,7 +110,7 @@
                 toggle: () => {
                     entry.leftElem.classList.toggle('on')
                     settings.save(entryData.key, !app.config[entryData.key])
-                    sync.configToUI({ updatedKey: entryData.key })
+                    sync.configToUI({ key: entryData.key })
                     requestAnimationFrame(() => notify(
                         `${entryData.label} ${['OFF', 'ON'][+settings.typeIsEnabled(entryData.key)]}`))
                 },
