@@ -30,12 +30,13 @@ chrome.runtime.onMessage.addListener(async ({ action }) => {
         const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true })
         const chatgptTab = new URL(activeTab.url).hostname == 'chatgpt.com' ? activeTab
                          : await chrome.tabs.create({ url: chatgptURL })
-        if (activeTab != chatgptTab) await new Promise(resolve => // after new tab loads
-            chrome.tabs.onUpdated.addListener(function loadedListener(tabId, { status }) {
-                if (tabId == chatgptTab.id && status == 'complete') {
-                    chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 1500) }
-            })
-        )
+        if (activeTab != chatgptTab) 
+            await new Promise(resolve => // after new tab loads
+                chrome.tabs.onUpdated.addListener(function loadedListener(tabId, { status }) {
+                    if (tabId == chatgptTab.id && status == 'complete') {
+                        chrome.tabs.onUpdated.removeListener(loadedListener) ; setTimeout(resolve, 1500) }
+                })
+            )
         chrome.tabs.sendMessage(chatgptTab.id, { action: 'showAbout', source: 'service-worker.js' })
     }
 })
