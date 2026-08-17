@@ -1,3 +1,10 @@
+***
+
+> [!IMPORTANT]  
+> This repo has migrated to **<https://codeberg.org/KudoAI/chatgpt.js-chrome-starter>**
+
+***
+
 <a id="top"></a>
 
 <div align="center">
